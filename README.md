@@ -9,8 +9,8 @@
 
 1. [Introduction to Docker](#introduction-to-docker)
      - [What is Docker?](#what-is-docker?)
-     - [Why Using Docker?](#why-using-docker)
-     - [Docker Architecture](#docker-architecture)
+     - [Difference Between Docker Containers and Virtual Machines](#difference-between-docker-containers-and-virtual-machines)
+     - [How Docker Works?](#how-docker-works)
 2. [Getting Started](#getting-started)
 3. [Docker Concepts](#docker-concepts)
     - [Containers](#containers)
@@ -52,4 +52,21 @@
   - Docker is an open-source platform designed to automate the deployment of applications inside containers. Containers are lightweight and portable environments that package an application and its dependencies, enabling it to run consistently across various computing environments, such as development, testing, and production.
   
   - Docker provides a standardized way to package, distribute, and manage applications, making it easier for developers to build, ship, and run their software across different systems and cloud environments. With Docker, developers can create containers containing all the necessary libraries, dependencies, and configurations needed to run their applications, without worrying about compatibility issues or differences in the underlying infrastructure.
-    
+
+
+  # Difference Between Docker Containers and Virtual Machines
+
+  | Characteristic            | Docker Containers                                 | Virtual Machines                                  |
+|---------------------------|---------------------------------------------------|---------------------------------------------------|
+| Architecture              | Share host OS kernel and binaries                | Each VM runs its own complete OS stack            |
+|                           | Encapsulate an application and its dependencies  | along with the application and its dependencies  |
+|                           | Lightweight, start almost instantly              | Heavier due to complete OS stack                  |
+| Resource Utilization      | Consume fewer resources as they share host OS    | More resource-intensive due to complete OS stack  |
+|                           | resources                                         |                                                   |
+| Isolation                 | Process-level isolation                           | Stronger isolation with each VM running its own  |
+|                           | Each container runs as an isolated process on    | OS kernel                                         |
+|                           | the host system                                  |                                                   |
+| Portability               | Highly portable, can run on any system that      | Less portable, require a hypervisor to run, which|
+|                           | supports Docker                                  | may not be available on all systems               |
+
+  
