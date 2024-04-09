@@ -1,6 +1,10 @@
 # Docker-Documentation
 
+![docker-image](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/e39f3016-6127-4e29-9c52-5635f1e5eb80)
+
+
  This comprehensive guide is designed to help you understand and utilize Docker, an open platform for developing, shipping, and running applications inside containers. Whether you're a beginner getting started with containerization or an experienced user seeking advanced tips and tricks, this documentation covers everything you need to know to harness the power of Docker effectively.
+ 
 
 # Table of Contents
 
