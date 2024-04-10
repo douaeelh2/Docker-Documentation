@@ -130,13 +130,14 @@ In Docker's client-server architecture, the process goes as follows:
  
  # Docker Containers
  - A Docker container is a runtime `instance` of a Docker image. It encapsulates an application along with its dependencies and runs in isolated environments called containers.
- 
-   ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
+
+    ![docker-containers](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/28c4b633-971a-472e-8141-d7fc907b60ca)
  
  - Containers are lightweight, portable, and provide consistent environments across different deployment environments, ensuring that applications run consistently regardless of the underlying infrastructure.
  -  `Multiple` containers can run on the `same` host without interfering with each other, making them an ideal choice for microservices architectures and containerized applications.
-   
-   ![docker-containers](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/28c4b633-971a-472e-8141-d7fc907b60ca)
+
+   ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
+
 
 
  # 8. References 
