@@ -16,6 +16,7 @@
 3. [Docker Concepts](#docker-concepts)
     - [Docker Images](#docker-images)
     - [Docker Containers](#docker-containers)
+    - [Parent Images & Docker Hub](#parent-images-&-docker-hub)
     - [Dockerfile](#dockerfile)
     - [Networking](#networking)
     - [Volumes](#volumes)
@@ -131,10 +132,25 @@ In Docker's client-server architecture, the process goes as follows:
     ![docker-containers](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/28c4b633-971a-472e-8141-d7fc907b60ca)
  
  - Containers are lightweight, portable, and provide consistent environments across different deployment environments, ensuring that applications run consistently regardless of the underlying infrastructure.
- -  `Multiple` containers can run on the `same` host without interfering with each other, making them an ideal choice for microservices architectures and containerized applications.
+ -  `Multiple containers` can run on the `same host` without interfering with each other, making them an ideal choice for microservices architectures and containerized applications.
 
    ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
 
+  # Parent Images & Docker Hub
+
+- In Docker, a parent image is an image from which another image is created. Each `Docker image` is made up of `layers`, which are `read-only` layers stacked on top of each other to form the complete image. These layers are created from the `Dockerfile` instructions when building the image.
+  
+  ![parent-image](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/0f17b1a5-0fc9-469d-8b24-c64ad0f9369f)
+
+- Parent images can be official images provided by Docker, such as those for popular programming languages like Python or Node.js, or they can be custom images created by users or organizations. These parent images often come pre-installed with certain dependencies, libraries, or configurations specific to a particular runtime environment.
+  
+  ![parent-image2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/f1906606-5fdc-4919-b6f9-c4587f9b7abb)
+
+- Here are some examples of commonly used parent images in Docker:
+   - `Python:` Used for Python applications, e.g., `python:3.8`, `python:3.9-alpine`.
+   - `Node.js:` For Node.js applications, e.g., `node:14`, `node:alpine`.
+   - `MySQL:` Database server, e.g., `mysql:8.0`.
+     
 
 
  # 8. References 
