@@ -121,7 +121,7 @@ In Docker's client-server architecture, the process goes as follows:
 # 2. Installation 
 - [Docker Installation Crash Course](https://www.youtube.com/watch?v=8Ev1aXl7TGY&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=2)
 
-# Docker Concepts
+# 3. Docker Concepts
    # Docker Images 
    - A Docker image is a lightweight, standalone, executable package that includes everything needed to `run` a piece of software, including the `code`, `runtime`, `libraries`, `environment variables`, and `configuration files`. It's essentially a snapshot of a Docker container. Docker images are built using a `Dockerfile` and can be stored in `registries`, such as `Docker Hub` or a private registry, for easy distribution and sharing among developers and systems.
    -  It's important to note that Docker images are `immutable`, meaning they do not change once created. To introduce changes, a new image needs to be created based on the desired modifications.
