@@ -122,21 +122,21 @@ In Docker's client-server architecture, the process goes as follows:
 - [Docker Installation Crash Course](https://www.youtube.com/watch?v=8Ev1aXl7TGY&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=2)
 
 # Docker Concepts
-  # Docker Images 
-  - A Docker image is a lightweight, standalone, executable package that includes everything needed to `run` a piece of software, including the `code`, `runtime`, `libraries`, `environment variables`, and `configuration files`. It's essentially a snapshot of a Docker container. Docker images are built using a `Dockerfile` and can be stored in `registries`, such as `Docker Hub` or a private registry, for easy distribution and sharing among developers and systems.
-  -  It's important to note that Docker images are `immutable`, meaning they do not change once created. To introduce changes, a new image needs to be created based on the desired modifications.
-
-![docker-images](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/0ebcd5e5-b17a-4fca-9cd6-f621ae7ff3e7)
-
-# Docker Containers
-- A Docker container is a runtime `instance` of a Docker image. It encapsulates an application along with its dependencies and runs in isolated environments called containers.
-- Containers are lightweight, portable, and provide consistent environments across different deployment environments, ensuring that applications run consistently regardless of the underlying infrastructure.
--  `Multiple` containers can run on the `same` host without interfering with each other, making them an ideal choice for microservices architectures and containerized applications.
-
-  ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
-
-  
-  ![docker-containers](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/28c4b633-971a-472e-8141-d7fc907b60ca)
+   # Docker Images 
+   - A Docker image is a lightweight, standalone, executable package that includes everything needed to `run` a piece of software, including the `code`, `runtime`, `libraries`, `environment variables`, and `configuration files`. It's essentially a snapshot of a Docker container. Docker images are built using a `Dockerfile` and can be stored in `registries`, such as `Docker Hub` or a private registry, for easy distribution and sharing among developers and systems.
+   -  It's important to note that Docker images are `immutable`, meaning they do not change once created. To introduce changes, a new image needs to be created based on the desired modifications.
+ 
+ ![docker-images](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/0ebcd5e5-b17a-4fca-9cd6-f621ae7ff3e7)
+ 
+ # Docker Containers
+ - A Docker container is a runtime `instance` of a Docker image. It encapsulates an application along with its dependencies and runs in isolated environments called containers.
+ 
+   ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
+ 
+ - Containers are lightweight, portable, and provide consistent environments across different deployment environments, ensuring that applications run consistently regardless of the underlying infrastructure.
+ -  `Multiple` containers can run on the `same` host without interfering with each other, making them an ideal choice for microservices architectures and containerized applications.
+   
+   ![docker-containers](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/28c4b633-971a-472e-8141-d7fc907b60ca)
 
 
  # 8. References 
