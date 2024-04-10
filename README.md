@@ -12,7 +12,7 @@
      - [What is Virtual Machine?](#what-is-virtual-machine?)
      - [Difference Between Docker Containers and Virtual Machines](#difference-between-docker-containers-and-virtual-machines)
      - [How Docker Works?](#how-docker-works)
-2. [Getting Started](#getting-started)
+2. [Installation](#installation)
 3. [Docker Concepts](#docker-concepts)
     - [Containers](#containers)
     - [Images](#images)
@@ -20,10 +20,7 @@
     - [Networking](#networking)
     - [Volumes](#volumes)
     - [Compose](#compose)
-4. [Installation](#installation)
-    - [Docker Desktop](#docker-desktop)
-    - [Docker Engine](#docker-engine)
-5. [Usage](#usage)
+4. [Usage](#usage)
     - [Running Containers](#running-containers)
     - [Building Images](#building-images)
     - [Managing Volumes](#managing-volumes)
@@ -44,9 +41,16 @@
     
   - The problem arises when attempting to execute code that relies on specific runtime environments, libraries, or dependencies that are either missing or incompatible with the current system configuration. Incompatibility issues can manifest in various forms, including version discrepancies, conflicting dependencies, or differences in underlying operating systems.
     
+
+![what-is-docker](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/e88adcee-0f8b-4914-ab35-96fd51e7e445)
+
   - Enter Docker – a powerful tool for containerization that provides a solution to these compatibility challenges. Docker allows developers to encapsulate applications and their dependencies into lightweight, portable containers. These containers provide a consistent environment regardless of the underlying infrastructure, making it possible to run applications seamlessly across different systems.
     
   - In the context of our Node.js scenario, Docker enables us to create a containerized environment with the exact version of Node.js and any required dependencies. By defining a Dockerfile – a text document that contains instructions for building the Docker image – we can specify the desired Node.js version and any additional packages or configurations needed for our application.
+    
+
+![what-is-docker2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/870f54d7-bf87-481e-bc57-95bd947e1ea0)
+    
 
   # What is Virtual Machine ?
   
@@ -73,7 +77,12 @@
 | Process Isolation       | OS-level process isolation.                                                                                        | Hardware-level process isolation.                                                                                       |
 | Boot Time               | Quick boot time due to lightweight nature and resource sharing.                                                     | Slow boot time due to the need to boot up a complete operating system for each VM.                                       |
 
-  
+
+
+  ![container-vs-vm2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/231adc53-b67b-4af2-8a04-9e45ff5a8c9d)
+
+ 
+
  # Docker Architecture:
    Docker uses a `client-server` architecture. The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon can run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface. Another Docker client is Docker Compose, that lets you work with applications consisting of a set of containers.
 
@@ -109,7 +118,15 @@ In Docker's client-server architecture, the process goes as follows:
 
   - `Response to client:` After the Docker server processes the command, it sends a response to the Docker client. This response may include information about the success or failure of the operation, additional details about the affected containers or images, etc.
 
+# 2. Installation 
+- [Docker Installation Crash Course](https://www.youtube.com/watch?v=8Ev1aXl7TGY&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=2)
 
+# Docker Concepts
+  # Containers 
+  
+
+  
  # 8. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
 - [Docs.Docker](https://docs.docker.com/)
+- [Docker Crash Course](https://www.youtube.com/watch?v=31ieHmcTUOk&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=1)
