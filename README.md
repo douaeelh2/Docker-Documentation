@@ -37,17 +37,15 @@
 
 # 1. Introduction to Docker
 
-  - In the ever-evolving landscape of software development, compatibility issues between different environments often pose significant challenges for developers. Consider a scenario where you're tasked with running a Node.js application on your local machine. However, you encounter compatibility issues because the version of Node.js installed on your system differs from the one required by the application. This situation is not uncommon and can lead to frustrating roadblocks in the development process.
-    
-  - The problem arises when attempting to execute code that relies on specific runtime environments, libraries, or dependencies that are either missing or incompatible with the current system configuration. Incompatibility issues can manifest in various forms, including version discrepancies, conflicting dependencies, or differences in underlying operating systems.
+ - In software development, compatibility issues often arise when running applications due to differences in runtime environments, `dependencies`, and system configurations.
+ - For example, running a `Node.js` application locally may encounter problems if the installed Node.js version differs from the one required by the application.These issues stem from missing `dependencies`, conflicting `libraries`, or differences in underlying `operating systems`. Managing runtime environments and dependencies is crucial to ensure smooth application execution across diverse environments and avoid development roadblocks.
     
 
 ![what-is-docker](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/e88adcee-0f8b-4914-ab35-96fd51e7e445)
 
-  - Enter Docker – a powerful tool for containerization that provides a solution to these compatibility challenges. Docker allows developers to encapsulate applications and their dependencies into lightweight, portable containers. These containers provide a consistent environment regardless of the underlying infrastructure, making it possible to run applications seamlessly across different systems.
-    
-  - In the context of our Node.js scenario, Docker enables us to create a containerized environment with the exact version of Node.js and any required dependencies. By defining a Dockerfile – a text document that contains instructions for building the Docker image – we can specify the desired Node.js version and any additional packages or configurations needed for our application.
-    
+  - Enter Docker – It allows developers to package applications and dependencies into portable containers, ensuring consistent execution across various systems.
+  - Specifically in the Node.js scenario, Docker permits the creation of a containerized environment with the exact Node.js `version` and `dependencies` needed. By defining instructions in a `Dockerfile`, developers can specify the required environment and streamline development, mitigating compatibility issues and enhancing productivity.
+   
 
 ![what-is-docker2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/870f54d7-bf87-481e-bc57-95bd947e1ea0)
     
