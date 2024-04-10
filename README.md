@@ -93,6 +93,22 @@
    
    - `Docker Networks:` Docker networks allow containers to communicate with each other and with other network resources. They provide isolation and security by default, allowing users to define custom network configurations for their containers.
 
+     
+
+In Docker's client-server architecture, the process goes as follows:
+
+  - `Docker client:` The process starts when the user uses the Docker client, which can be the Docker CLI command line or a Docker graphical user interface (GUI). The Docker client can be run on any Docker-enabled system, whether it is the same system as the Docker server or a remote system.
+    
+  - `Docker server:` Docker Server, also known as Docker Daemon, runs on a host system. It is the component responsible for managing Docker container operations. The Docker Daemon listens for requests from the Docker client.
+
+  - `Client-server communication:` When the user sends a Docker command via the Docker client, it is transmitted to the Docker server via a communications protocol, often HTTPS or a Unix socket.
+  - The Docker server receives the command, processes it, and returns the results to the Docker client.
+  
+  - `Operations management:`The Docker server handles operations such as building Docker images, starting and stopping containers, managing network and storage, etc.
+  For example, if the user sends a command to run a container from a specific Docker image, the Docker server will check if the image is available locally. If it is not, it will download it from a Docker registry such as Docker Hub. Then it will create and start the container based on the parameters specified in the command.
+
+  - `Response to client:` After the Docker server processes the command, it sends a response to the Docker client. This response may include information about the success or failure of the operation, additional details about the affected containers or images, etc.
+
 
  # 8. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
