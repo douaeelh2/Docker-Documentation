@@ -9,6 +9,7 @@
 
 1. [Introduction to Docker](#introduction-to-docker)
      - [What is Docker?](#what-is-docker?)
+     - [What is Virtual Machine?](#what-is-virtual-machine?)
      - [Difference Between Docker Containers and Virtual Machines](#difference-between-docker-containers-and-virtual-machines)
      - [How Docker Works?](#how-docker-works)
 2. [Getting Started](#getting-started)
@@ -47,6 +48,12 @@
     
   - In the context of our Node.js scenario, Docker enables us to create a containerized environment with the exact version of Node.js and any required dependencies. By defining a Dockerfile – a text document that contains instructions for building the Docker image – we can specify the desired Node.js version and any additional packages or configurations needed for our application.
 
+  # What is Virtual Machine ?
+  
+  - A virtual machine or VM is a fully virtualized environment that runs on a physical machine. It runs its own operating system (OS) and benefits from the same equipment as a physical machine: CPU, RAM memory, hard drive and network card. Several virtual machines with different OS can coexist on the same physical server: Linux, MacOS, Windows, etc.
+  - The sharing of different virtual environments is managed by the hypervisor generally hosted in a public cloud, private cloud or hybrid cloud. It performs resource partitioning and allocates a partition to each VM. This is done using software installed on the physical machine. In general, the latter has what is called a shared pool of physical resources.
+   
+
   # What is Docker ?
   
   - Docker is an open-source platform designed to automate the deployment of applications inside containers. Containers are lightweight and portable environments that package an application and its dependencies, enabling it to run consistently across various computing environments, such as development, testing, and production.
@@ -55,6 +62,8 @@
 
 
   # Difference Between Docker Containers and Virtual Machines
+
+  ![container-vs-vm](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/a8e7f3d5-7a87-41ce-a94b-1d9dd8b17366)
 
 | Aspect                   | Docker Containers                                                                                                  | Virtual Machines (VMs)                                                                                                |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
