@@ -38,8 +38,7 @@
 # 1. Introduction to Docker
 
  - In software development, compatibility issues often arise when running applications due to differences in runtime environments, `dependencies`, and system configurations.
- - For example, running a `Node.js` application locally may encounter problems if the installed Node.js version differs from the one required by the application.These issues stem from missing `dependencies`, conflicting `libraries`, or differences in underlying `operating systems`. Managing runtime environments and dependencies is crucial to ensure smooth application execution across diverse environments and avoid development roadblocks.
-    
+ - For example, running a `Node.js` application locally may encounter problems if the installed Node.js version differs from the one required by the application.These issues stem from missing `dependencies`, conflicting `libraries`, or differences in underlying `operating systems`. 
 
 ![what-is-docker](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/e88adcee-0f8b-4914-ab35-96fd51e7e445)
 
