@@ -321,7 +321,7 @@ Once you've tagged your image, you can push it to a Docker registry to make it a
 To pull an image from a registry, you can use the docker pull command:
     
    ```
-  docker pull my-registry/my-node-app:v1.0
+   docker pull my-registry/my-node-app:v1.0
    ```
 - This command pulls the `my-node-app` image with version `v1.0` from your Docker registry.
 
