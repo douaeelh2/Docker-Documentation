@@ -223,7 +223,7 @@ In Docker's client-server architecture, the process goes as follows:
       
 A `.dockerignore` file is used in Docker to specify files and directories that should be ignored when building a Docker image. Much like how a `.gitignore` file tells Git which files and directories to ignore when pushing code to a repository, a `.dockerignore` file specifies what Docker should ignore when building an image.
 
-This is useful for excluding unnecessary files and directories from being included in the Docker image, which can help reduce the image size and improve build times. Common examples of files and directories that are often included in a .dockerignore file are temporary files, build artifacts, and dependencies that are not required for the application to run in a Docker container.
+This is useful for excluding unnecessary files and directories from being included in the Docker image, which can help reduce the image size and improve build times. Common examples of files and directories that are often included in a `.dockerignore` file are temporary files, build artifacts, and `dependencies` that are not required for the application to run in a Docker container.
 
    ### dockerignore for a React application
 
