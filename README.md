@@ -160,9 +160,9 @@ In Docker's client-server architecture, the process goes as follows:
    - Once the Dockerfile is written, it is used with the `docker build` command to build the Docker image. Once the image is created, it can be used to run containers, which are running instances of that image.
    - Here are Dockerfile examples for a React application and a Spring Boot application:
 
-     ### Dockerfile for a React application
+    ### Dockerfile for a React application
      
-     ```dockerfile
+    ```dockerfile
      
        # Use a Node.js image as the base
        FROM node:14-alpine
@@ -181,12 +181,12 @@ In Docker's client-server architecture, the process goes as follows:
        
        # Default command to run the application when a container starts
        CMD ["npm", "start"]
-     ```
+   ```
 
-     - The Dockerfile for the React application uses a `Node.js image` as the base, copies the application files into the `container`, installs `dependencies`, builds the application, and sets the default `command` to start the application.
+   - The Dockerfile for the React application uses a `Node.js image` as the base, copies the application files into the `container`, installs `dependencies`, builds the application, and sets the default `command` to start the application.
 
 
-  ### Dockerfile for a Spring Boot application
+   ### Dockerfile for a Spring Boot application
   
    ```dockerfile
       # Use an OpenJDK image as the base
