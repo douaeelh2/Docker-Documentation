@@ -227,8 +227,7 @@ This is useful for excluding unnecessary files and directories from being includ
 
    ### dockerignore for a React application
 
-   ```dockerfile
-     
+   ```    
        my-react-app/
        ├── node_modules/
        ├── public/
@@ -245,13 +244,15 @@ This is useful for excluding unnecessary files and directories from being includ
 
    ```
 
-   ```dockerfile
+   ```
       node_modules
        /build
        .DS_Store
    ```
    
-
+   - `node_modules:` Excluded because dependencies are installed during the image build process.
+   - `/build:` React typically generates a build directory when you build your project for production. This directory contains optimized production-ready files. Since you don't need these files in your development environment, they can be excluded.
+   - `.DS_Store:` Excluded as it's a macOS-specific file.
       
  # 6. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
