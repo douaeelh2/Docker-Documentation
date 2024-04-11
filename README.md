@@ -114,13 +114,13 @@ In Docker's client-server architecture, the process goes as follows:
 
 # 3. Docker Concepts
 
-   # Docker Images 
+# Docker Images 
    - A Docker image is a lightweight, standalone, executable package that includes everything needed to `run` a piece of software, including the `code`, `runtime`, `libraries`, `environment variables`, and `configuration files`. It's essentially a snapshot of a Docker container. Docker images are built using a `Dockerfile` and can be stored in `registries`, such as `Docker Hub` or a private registry, for easy distribution and sharing among developers and systems.
    -  It's important to note that Docker images are `immutable`, meaning they do not change once created. To introduce changes, a new image needs to be created based on the desired modifications.
  
  ![docker-images](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/0ebcd5e5-b17a-4fca-9cd6-f621ae7ff3e7)
  
- # Docker Containers
+# Docker Containers
  - A Docker container is a runtime `instance` of a Docker image. It encapsulates an application along with its dependencies and runs in isolated environments called containers.
 
     ![docker-containers](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/28c4b633-971a-472e-8141-d7fc907b60ca)
@@ -130,7 +130,7 @@ In Docker's client-server architecture, the process goes as follows:
 
    ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
 
-  # Parent Images
+# Parent Images
 
 - In Docker, a parent image is an image from which another image is created. Each `Docker image` is made up of `layers`, which are `read-only` layers stacked on top of each other to form the complete image. These layers are created from the `Dockerfile` instructions when building the image.
   
@@ -145,7 +145,7 @@ In Docker's client-server architecture, the process goes as follows:
    - `Node.js:` For Node.js applications, e.g., `node:14`, `node:alpine`.
    - `MySQL:` Database server, e.g., `mysql:8.0`.
      
-   # Dockerfile
+# Dockerfile
    - A Dockerfile is a text file that contains a series of `instructions` used to build a `Docker image`. A Docker image is a lightweight, portable package that contains everything needed to run an application, including `code`, `libraries`, `dependencies`, and `environment variables`.
    
    - The Dockerfile defines the environment in which an application will run inside a Docker container. It specifies the steps needed to create the Docker image, such as which base to use, which `dependencies to install`, which `files to add`, which `commands to run`, etc.
@@ -153,9 +153,9 @@ In Docker's client-server architecture, the process goes as follows:
    - Once the Dockerfile is written, it is used with the `docker build` command to build the Docker image. Once the image is created, it can be used to run containers, which are running instances of that image.
    - Here are Dockerfile examples for a React application and a Spring Boot application:
 
-    ### Dockerfile for a React application
+   ### Dockerfile for a React application
 
-     ```dockerfile
+   ```dockerfile
      
        my-react-app/
        ├── node_modules/
@@ -171,9 +171,9 @@ In Docker's client-server architecture, the process goes as follows:
        ├── package.json
        └── .Dockerfile
 
-    ```
+   ```
      
-    ```dockerfile
+   ```dockerfile
      
       # Use a Node.js image as the base
        FROM node:14-alpine
@@ -198,12 +198,12 @@ In Docker's client-server architecture, the process goes as follows:
 
    ```
 
-   - The Dockerfile for the React application uses a `Node.js image` as the base, copies the application files into the `container`, installs `dependencies`, builds the application, and sets the default `command` to start the application.
+ - The Dockerfile for the React application uses a `Node.js image` as the base, copies the application files into the `container`, installs `dependencies`, builds the application, and sets the default `command` to start the application.
 
 
    ### Dockerfile for a Spring Boot application
 
-     ```
+   ```
        your-spring-boot-app/
        ├── src/
        │   ├── main/
@@ -222,9 +222,9 @@ In Docker's client-server architecture, the process goes as follows:
        │   └── your-spring-boot-app.jar
        ├── pom.xml
        └── Dockerfile
-     ```
+   ```
 
-     ```dockerfile
+   ```dockerfile
       # Use an OpenJDK image as the base
       FROM openjdk:11-jre-slim
       
@@ -236,7 +236,7 @@ In Docker's client-server architecture, the process goes as follows:
       
       # Default command to run the application when a container starts
       CMD ["java", "-jar", "your-spring-boot-app.jar"]
-     ```
+   ```
 
    
     - The Dockerfile for the Spring Boot application uses an `OpenJDK image` as the base, copies the Spring Boot application `JAR file` into the `container`, and sets the default `command` to run the application.
