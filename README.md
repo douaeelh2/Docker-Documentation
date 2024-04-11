@@ -19,13 +19,13 @@
     - [Parent Images](#parent-images)
     - [Dockerfile](#dockerfile)
     - [dockerignore](#dockerignore)
-5. [Usage](#usage)
-    - [Running Containers](#running-containers)
-    - [Building Images](#building-images)
+4. [Docker Usage](#docker-usage)
+    - [Managing Images](#building-images)
+    - [Managing Containers](#running-containers)
     - [Docker Volumes](#docker-volumes)
     - [Managing Volumes](#managing-volumes)
     - [Docker Compose](#docker-compose)
-6. [References](#references)
+5. [References](#references)
 
 
 
@@ -275,8 +275,77 @@ This is useful for excluding unnecessary files and directories from being includ
    - `node_modules:` Excluded because dependencies are installed during the image build process.
    - `/build:` React typically generates a build directory when you build your project for production. This directory contains optimized production-ready files. Since you don't need these files in your development environment, they can be excluded.
    - `.DS_Store:` Excluded as it's a macOS-specific file.
-      
- # 6. References 
+
+# 4. Docker Usage
+
+### - Building Images:
+- You build Docker images using a `Dockerfile`. The Dockerfile contains instructions on how to assemble the image. You can use the docker build command to build an image.
+  
+ ```
+ docker build [OPTIONS] NAME PATH
+ ```
+   - `docker build:` The base command for building Docker images.
+   - `[OPTIONS]:` Optional flags that modify the build process (e.g., -t to tag the image).
+   - `NAME:` Image Name.
+   - `PATH | URL | -:` Specifies the location of the Dockerfile and context (build context) for the build operation. This can be a local directory (PATH), a URL (URL), or a    dash (-) to read the Dockerfile from the standard input.
+
+- Here's a basic example of a Dockerfile for a Node.js application:
+  
+   ```dockerfile
+     FROM node:latest
+     WORKDIR /app
+     COPY package.json package-lock.json ./
+     RUN npm install
+     COPY . .
+     EXPOSE 3000
+     CMD ["node", "app.js"]
+   ```
+   ```
+   docker build -t my-node-app .
+   ```
+- This command builds a Docker image named `my-node-app` using the Dockerfile in the current directory `./`.
+
+  ### - Tagging an Image:
+- Tagging helps you identify specific versions of your image. You can tag images with version numbers, labels, or any other meaningful identifier. To tag the image you just built:
+  
+```bash
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+```
+   - `docker tag:` Command for tagging Docker images.
+   - `SOURCE_IMAGE[:TAG]:` Specifies the source image to tag. Optionally, you can specify a tag for the source image.
+   - `TARGET_IMAGE[:TAG]:` Specifies the new name and optionally a tag for the tagged image.
+
+- Let's take the same example for a Node.js application:
+  
+ ```bash
+ docker tag my-node-app my-registry/my-node-app:v1.0
+ ```
+- This command tags the `my-node-app` image with the version `v1.0`, ready to be pushed to your Docker registry (replace `my-registry` with your actual Docker registry URL).
+
+  ### - Building Images:
+- You build Docker images using a `Dockerfile`. The Dockerfile contains instructions on how to assemble the image. You can use the docker build command to build an image.
+  
+ ```
+ docker build [OPTIONS] NAME PATH
+ ```
+
+- Here's a basic example of a Dockerfile for a Node.js application:
+  
+   ```dockerfile
+     FROM node:latest
+     WORKDIR /app
+     COPY package.json package-lock.json ./
+     RUN npm install
+     COPY . .
+     EXPOSE 3000
+     CMD ["node", "app.js"]
+   ```
+   ```
+   docker build -t my-node-app .
+   ```
+- This command builds a Docker image named `my-node-app` using the Dockerfile in the current directory `./`.
+  
+# 5. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
 - [Docs.Docker](https://docs.docker.com/)
 - [Docker Crash Course](https://www.youtube.com/watch?v=31ieHmcTUOk&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=1)
