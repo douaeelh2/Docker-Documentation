@@ -279,7 +279,7 @@ This is useful for excluding unnecessary files and directories from being includ
 # 4. Docker Usage
 # Docker Images
 
-### Building Images:
+ ### 1. Building Images:
 - You build Docker images using a `Dockerfile`. The Dockerfile contains instructions on how to assemble the image. You can use the docker build command to build an image.
 
 - Here's a basic example of a Dockerfile for a Node.js application:
@@ -298,7 +298,7 @@ This is useful for excluding unnecessary files and directories from being includ
    ```
 - This command builds a Docker image named `my-node-app` using the Dockerfile in the current directory `./`.
 
-  ### Tagging an Image:
+ ### 2. Tagging an Image:
 - Tagging helps you identify specific versions of your image. You can tag images with version numbers, labels, or any other meaningful identifier. To tag the image you just built:
 
 - Let's take the same example for a Node.js application:
@@ -309,7 +309,7 @@ This is useful for excluding unnecessary files and directories from being includ
 - This command tags the `my-node-app` image with the version `v1.0`, ready to be pushed to your Docker registry (replace `my-registry` with your actual Docker registry URL).
 
 
-  ### Pushing an Image:
+### 3. Pushing an Image:
 Once you've tagged your image, you can push it to a Docker registry to make it accessible to other users or servers:
     
    ```
@@ -317,7 +317,7 @@ Once you've tagged your image, you can push it to a Docker registry to make it a
    ```
 - This command pushes the tagged image `my-node-app:v1.0` to your Docker `registry`.
 
-   ### Pulling an Image:
+### 4. Pulling an Image:
 To pull an image from a registry, you can use the docker pull command:
     
    ```
