@@ -16,7 +16,7 @@
 3. [Docker Concepts](#docker-concepts)
     - [Docker Images](#docker-images)
     - [Docker Containers](#docker-containers)
-    - [Parent Images & Docker Hub](#parent-images-&-docker-hub)
+    - [Parent Images](#parent-images)
     - [Dockerfile](#dockerfile)
     - [Networking](#networking)
     - [Volumes](#volumes)
@@ -120,6 +120,7 @@ In Docker's client-server architecture, the process goes as follows:
 - [Docker Installation Crash Course](https://www.youtube.com/watch?v=8Ev1aXl7TGY&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=2)
 
 # 3. Docker Concepts
+
    # Docker Images 
    - A Docker image is a lightweight, standalone, executable package that includes everything needed to `run` a piece of software, including the `code`, `runtime`, `libraries`, `environment variables`, and `configuration files`. It's essentially a snapshot of a Docker container. Docker images are built using a `Dockerfile` and can be stored in `registries`, such as `Docker Hub` or a private registry, for easy distribution and sharing among developers and systems.
    -  It's important to note that Docker images are `immutable`, meaning they do not change once created. To introduce changes, a new image needs to be created based on the desired modifications.
@@ -136,7 +137,7 @@ In Docker's client-server architecture, the process goes as follows:
 
    ![docker-containers2](https://github.com/douaeelh2/Docker-Documentation/assets/127549220/b9277bc8-c654-4e3f-9a23-732e8b029856)
 
-  # Parent Images & Docker Hub
+  # Parent Images
 
 - In Docker, a parent image is an image from which another image is created. Each `Docker image` is made up of `layers`, which are `read-only` layers stacked on top of each other to form the complete image. These layers are created from the `Dockerfile` instructions when building the image.
   
@@ -151,7 +152,36 @@ In Docker's client-server architecture, the process goes as follows:
    - `Node.js:` For Node.js applications, e.g., `node:14`, `node:alpine`.
    - `MySQL:` Database server, e.g., `mysql:8.0`.
      
+   # Dockerfile
+   - A Dockerfile is a text file that contains a series of `instructions` used to build a `Docker image`. A Docker image is a lightweight, portable package that contains everything needed to run an application, including `code`, `libraries`, `dependencies`, and `environment variables`.
+   
+   - The Dockerfile defines the environment in which an application will run inside a Docker container. It specifies the steps needed to create the Docker image, such as which base to use, which `dependencies to install`, which `files to add`, which `commands to run`, etc.
+   
+   - Once the Dockerfile is written, it is used with the `docker build` command to build the Docker image. Once the image is created, it can be used to run containers, which are running instances of that image.
+   - Here are Dockerfile examples for a React application and a Spring Boot application:
 
+     ### Dockerfile for a React application
+     
+     ```dockerfile
+       # Use a Node.js image as the base
+       FROM node:14-alpine
+       
+       # Set the working directory inside the container
+       WORKDIR /app
+       
+       # Copy files from the host's current directory into the container
+       COPY . .
+       
+       # Install dependencies
+       RUN npm install
+       
+       # Build the React application
+       RUN npm run build
+       
+       # Default command to run the application when a container starts
+       CMD ["npm", "start"]
+     ```
+  
 
  # 8. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
