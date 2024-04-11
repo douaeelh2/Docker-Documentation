@@ -577,13 +577,6 @@ To pull an image from a registry, you can use the docker pull command:
 
 
 
-
-
-
-
-
-
-
 # 5. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
 - [Docs.Docker](https://docs.docker.com/)
