@@ -277,17 +277,10 @@ This is useful for excluding unnecessary files and directories from being includ
    - `.DS_Store:` Excluded as it's a macOS-specific file.
 
 # 4. Docker Usage
+# Docker Images
 
-### - Building Images:
+### Building Images:
 - You build Docker images using a `Dockerfile`. The Dockerfile contains instructions on how to assemble the image. You can use the docker build command to build an image.
-  
- ```
- docker build [OPTIONS] NAME PATH
- ```
-   - `docker build:` The base command for building Docker images.
-   - `[OPTIONS]:` Optional flags that modify the build process (e.g., -t to tag the image).
-   - `NAME:` Image Name.
-   - `PATH | URL | -:` Specifies the location of the Dockerfile and context (build context) for the build operation. This can be a local directory (PATH), a URL (URL), or a    dash (-) to read the Dockerfile from the standard input.
 
 - Here's a basic example of a Dockerfile for a Node.js application:
   
@@ -305,15 +298,8 @@ This is useful for excluding unnecessary files and directories from being includ
    ```
 - This command builds a Docker image named `my-node-app` using the Dockerfile in the current directory `./`.
 
-  ### - Tagging an Image:
+  ### Tagging an Image:
 - Tagging helps you identify specific versions of your image. You can tag images with version numbers, labels, or any other meaningful identifier. To tag the image you just built:
-  
-```bash
-docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
-```
-   - `docker tag:` Command for tagging Docker images.
-   - `SOURCE_IMAGE[:TAG]:` Specifies the source image to tag. Optionally, you can specify a tag for the source image.
-   - `TARGET_IMAGE[:TAG]:` Specifies the new name and optionally a tag for the tagged image.
 
 - Let's take the same example for a Node.js application:
   
@@ -322,28 +308,27 @@ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
  ```
 - This command tags the `my-node-app` image with the version `v1.0`, ready to be pushed to your Docker registry (replace `my-registry` with your actual Docker registry URL).
 
-  ### - Building Images:
-- You build Docker images using a `Dockerfile`. The Dockerfile contains instructions on how to assemble the image. You can use the docker build command to build an image.
-  
- ```
- docker build [OPTIONS] NAME PATH
- ```
 
-- Here's a basic example of a Dockerfile for a Node.js application:
-  
-   ```dockerfile
-     FROM node:latest
-     WORKDIR /app
-     COPY package.json package-lock.json ./
-     RUN npm install
-     COPY . .
-     EXPOSE 3000
-     CMD ["node", "app.js"]
-   ```
+  ### Pushing an Image:
+Once you've tagged your image, you can push it to a Docker registry to make it accessible to other users or servers:
+    
    ```
    docker build -t my-node-app .
    ```
-- This command builds a Docker image named `my-node-app` using the Dockerfile in the current directory `./`.
+- This command pushes the tagged image `my-node-app:v1.0` to your Docker `registry`.
+
+   ### Pulling an Image:
+To pull an image from a registry, you can use the docker pull command:
+    
+   ```
+  docker pull my-registry/my-node-app:v1.0
+   ```
+- This command pulls the `my-node-app` image with version `v1.0` from your Docker registry.
+
+  ```
+  docker pull mysql
+  ```
+- This command pulls the latest `MySQL image` from Docker Hub. By default, it pulls the `latest` version. If you want to specify a particular version, you can do so by appending the version tag after the image name, like `docker pull mysql:8.0`.
   
 # 5. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
