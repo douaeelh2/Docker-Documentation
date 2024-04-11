@@ -277,9 +277,9 @@ This is useful for excluding unnecessary files and directories from being includ
    - `.DS_Store:` Excluded as it's a macOS-specific file.
 
 # 4. Docker Usage
-# Docker Images
+# Managing Images
 
- ### 1. Building Images:
+ ## 1. Building Images
 - You build Docker images using a `Dockerfile`. The Dockerfile contains instructions on how to assemble the image. You can use the docker build command to build an image.
 
 - Here's a basic example of a Dockerfile for a Node.js application:
@@ -293,42 +293,138 @@ This is useful for excluding unnecessary files and directories from being includ
      EXPOSE 3000
      CMD ["node", "app.js"]
    ```
+ 
+   ```bash
+      $ docker build -t my-node-app .
+      Sending build context to Docker daemon  3.072kB
+      Step 1/5 : FROM node:14
+      ...
+      Successfully built ccb86e7a9d33
+      Successfully tagged my-node-app:latest
    ```
-   docker build -t my-node-app .
-   ```
+   
 - This command builds a Docker image named `my-node-app` using the Dockerfile in the current directory `./`.
 
- ### 2. Tagging an Image:
+ ## 2. Tagging an Image
 - Tagging helps you identify specific versions of your image. You can tag images with version numbers, labels, or any other meaningful identifier. To tag the image you just built:
 
 - Let's take the same example for a Node.js application:
   
  ```bash
- docker tag my-node-app my-registry/my-node-app:v1.0
+    $ docker tag my-node-app:latest my-registry/my-node-app:v1.0
  ```
 - This command tags the `my-node-app` image with the version `v1.0`, ready to be pushed to your Docker registry (replace `my-registry` with your actual Docker registry URL).
 
 
-### 3. Pushing an Image:
+## 3. Pushing an Image
 Once you've tagged your image, you can push it to a Docker registry to make it accessible to other users or servers:
     
-   ```
-   docker build -t my-node-app .
+   ```bash
+      $ docker push my-registry/my-node-app:v1.0
    ```
 - This command pushes the tagged image `my-node-app:v1.0` to your Docker `registry`.
 
-### 4. Pulling an Image:
+## 4. Pulling an Image
 To pull an image from a registry, you can use the docker pull command:
     
+  ```bash
+     $ docker pull node:14
+     14: Pulling from library/node
+     ...
+     Digest: sha256:3e5e8b3d930f004c7a5cb0f11e8db58f3f5a8d89b2de898e386998b97cd18864
+     Status: Downloaded newer image for node:14
   ```
-   docker pull my-registry/my-node-app:v1.0
-  ```
- - This command pulls the `my-node-app` image with version `v1.0` from your Docker registry.
 
-  ```
-  docker pull mysql
+  ```bash
+     $ docker pull mysql
   ```
  - This command pulls the latest `MySQL image` from Docker Hub. By default, it pulls the `latest` version. If you want to specify a particular version, you can do so by appending the version tag after the image name, like `docker pull mysql:8.0`.
+
+## 5. Remove an Image
+
+   ```bash
+      $ docker rmi my-node-app
+      Untagged: my-node-app:latest
+      Deleted: sha256:ccb86e7a9d33f97d75a4c06a5bde028e45e586a38b242e5be1a57b55c7f87851
+  ```
+## 5. Listing images
+
+  ```
+  $ docker images
+  REPOSITORY                TAG       IMAGE ID       CREATED       SIZE
+  my-node-app               latest    ccb86e7a9d33   2 hours ago   944MB
+  my-registry/my-node-app   v1.0      ccb86e7a9d33   2 hours ago   944MB
+  node                      14        56d8f5a52c2a   3 days ago    944MB
+  ```
+
+# Managing Containers
+## 1. Creating a container
+
+  ```
+  docker create --name my-node-container my-node-app
+  ```
+- This command creates a Docker container named `my-node-container` from the `my-node-app` image.
+
+## 2. Starting a container
+
+  ```bash
+     $ docker start my-node-container
+     my-node-container
+  ```
+
+## 3. Stopping a container
+
+  ```bash
+     $ docker stop my-node-container
+     my-node-container
+  ```
+  
+## 4. Restarting a container
+
+  ```bash
+     $ docker restart my-node-container
+     my-node-container
+  ```
+
+## 5. Pausing a container
+
+  ```bash
+     $ docker pause my-node-container
+     my-node-container
+  ```
+
+## 6. Resuming a container
+
+  ```bash
+     $ docker unpause my-node-container
+     my-node-container
+  ```
+## 7. Removing a container
+
+  ```bash
+     $ docker rm my-node-container
+     my-node-container
+  ```
+## 6. Listing containers
+- The `docker ps` command lists only running containers. If no containers are running, it will output nothing.
+   
+  ```bash
+     $ docker ps
+     CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS         PORTS     NAMES
+     35b9a383ff6f   my-node-app       "node server.js"        2 minutes ago   Up 1 minute              my-node-container
+     c3abf8d84f2c   nginx:latest      "/docker-entrypoint...."   3 hours ago     Up 3 hours     80/tcp    my-nginx-container
+  ```
+  
+- The `docker ps -a` command lists all containers, including those that have exited. Each row represents a container and includes information such as the container ID, image used to create the container, command executed in the container, creation time, status, exposed ports, and container name.
+  
+  ```bash
+     $ docker ps -a
+     CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS                      PORTS     NAMES
+     35b9a383ff6f   my-node-app       "node server.js"        2 minutes ago   Exited (0) 1 minute ago               my-node-container
+     c3abf8d84f2c   nginx:latest      "/docker-entrypoint...."   3 hours ago     Up 3 hours               80/tcp    my-nginx-container
+     e7b6f198d82a   ubuntu:latest     "/bin/bash"              3 hours ago     Exited (0) 3 hours ago               my-ubuntu-container
+  ```
+
   
 # 5. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
