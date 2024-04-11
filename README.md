@@ -320,15 +320,15 @@ Once you've tagged your image, you can push it to a Docker registry to make it a
 ### 4. Pulling an Image:
 To pull an image from a registry, you can use the docker pull command:
     
-   ```
+  ```
    docker pull my-registry/my-node-app:v1.0
-   ```
-- This command pulls the `my-node-app` image with version `v1.0` from your Docker registry.
+  ```
+ - This command pulls the `my-node-app` image with version `v1.0` from your Docker registry.
 
   ```
   docker pull mysql
   ```
-- This command pulls the latest `MySQL image` from Docker Hub. By default, it pulls the `latest` version. If you want to specify a particular version, you can do so by appending the version tag after the image name, like `docker pull mysql:8.0`.
+ - This command pulls the latest `MySQL image` from Docker Hub. By default, it pulls the `latest` version. If you want to specify a particular version, you can do so by appending the version tag after the image name, like `docker pull mysql:8.0`.
   
 # 5. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
