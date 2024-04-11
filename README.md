@@ -360,10 +360,10 @@ To pull an image from a registry, you can use the docker pull command:
 # Managing Containers
 ## 1. Creating a container
 
+  ```bash
+     docker run --name my-node-container my-node-app
   ```
-  docker create --name my-node-container my-node-app
-  ```
-- This command creates a Docker container named `my-node-container` from the `my-node-app` image.
+- This command creates and starts a new container named `my-node-container` from the `my-node-app` image.
 
 ## 2. Starting a container
 
