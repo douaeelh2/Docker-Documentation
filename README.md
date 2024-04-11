@@ -544,6 +544,7 @@ To pull an image from a registry, you can use the docker pull command:
     version: '3.8'
     services:
       frontend:
+        container_name: frontend_c
         build: ./frontend
         ports:
           - "3000:3000"
@@ -551,6 +552,7 @@ To pull an image from a registry, you can use the docker pull command:
           - backend
     
       backend:
+        container_name: backend_c
         build: ./backend
         ports:
           - "8080:8080"
@@ -558,6 +560,7 @@ To pull an image from a registry, you can use the docker pull command:
           - database
     
       database:
+        container_name: database_c
         image: mysql:latest
         restart: always
         environment:
@@ -567,6 +570,7 @@ To pull an image from a registry, you can use the docker pull command:
           MYSQL_PASSWORD: example
         ports:
           - "3306:3306"
+
   ```
   
 - The `docker-compose.yml` file defines three services: frontend, backend, and database.
