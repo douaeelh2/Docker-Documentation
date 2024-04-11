@@ -18,21 +18,14 @@
     - [Docker Containers](#docker-containers)
     - [Parent Images](#parent-images)
     - [Dockerfile](#dockerfile)
-    - [Networking](#networking)
-    - [Volumes](#volumes)
-    - [Compose](#compose)
+    - [dockerignore](#dockerignore)
 5. [Usage](#usage)
     - [Running Containers](#running-containers)
     - [Building Images](#building-images)
+    - [Docker Volumes](#docker-volumes)
     - [Managing Volumes](#managing-volumes)
-    - [Networking](#networking-1)
     - [Docker Compose](#docker-compose)
-6. [Best Practices](#best-practices)
-7. [Advanced Topics](#advanced-topics)
-    - [Swarm](#swarm)
-    - [Kubernetes](#kubernetes)
-    - [Security](#security)
-8. [References](#references)
+6. [References](#references)
 
 
 
@@ -161,10 +154,28 @@ In Docker's client-server architecture, the process goes as follows:
    - Here are Dockerfile examples for a React application and a Spring Boot application:
 
     ### Dockerfile for a React application
+
+     ```dockerfile
+     
+       my-react-app/
+       ├── node_modules/
+       ├── public/
+       │   ├── index.html
+       │   └── ...
+       ├── src/
+       │   ├── components/
+       │   │   ├── App.js
+       │   │   └── ...
+       │   ├── index.js
+       │   └── ...
+       ├── package.json
+       └── .Dockerfile
+
+    ```
      
     ```dockerfile
      
-       # Use a Node.js image as the base
+      # Use a Node.js image as the base
        FROM node:14-alpine
        
        # Set the working directory inside the container
@@ -179,8 +190,12 @@ In Docker's client-server architecture, the process goes as follows:
        # Build the React application
        RUN npm run build
        
+       # Expose port 3000
+       EXPOSE 3000
+       
        # Default command to run the application when a container starts
        CMD ["npm", "start"]
+
    ```
 
    - The Dockerfile for the React application uses a `Node.js image` as the base, copies the application files into the `container`, installs `dependencies`, builds the application, and sets the default `command` to start the application.
@@ -203,9 +218,42 @@ In Docker's client-server architecture, the process goes as follows:
      ```
    
     - The Dockerfile for the Spring Boot application uses an `OpenJDK image` as the base, copies the Spring Boot application `JAR file` into the `container`, and sets the default `command` to run the application.
- 
+
+      # dockerignore
       
- # 8. References 
+A `.dockerignore` file is used in Docker to specify files and directories that should be ignored when building a Docker image. Much like how a `.gitignore` file tells Git which files and directories to ignore when pushing code to a repository, a `.dockerignore` file specifies what Docker should ignore when building an image.
+
+This is useful for excluding unnecessary files and directories from being included in the Docker image, which can help reduce the image size and improve build times. Common examples of files and directories that are often included in a .dockerignore file are temporary files, build artifacts, and dependencies that are not required for the application to run in a Docker container.
+
+   ### dockerignore for a React application
+
+   ```dockerfile
+     
+       my-react-app/
+       ├── node_modules/
+       ├── public/
+       │   ├── index.html
+       │   └── ...
+       ├── src/
+       │   ├── components/
+       │   │   ├── App.js
+       │   │   └── ...
+       │   ├── index.js
+       │   └── ...
+       ├── package.json
+       └── .dockerignore
+
+   ```
+
+   ```dockerfile
+      node_modules
+       /build
+       .DS_Store
+   ```
+   
+
+      
+ # 6. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
 - [Docs.Docker](https://docs.docker.com/)
 - [Docker Crash Course](https://www.youtube.com/watch?v=31ieHmcTUOk&list=PL4cUxeGkcC9hxjeEtdHFNYMtCpjNBm3h7&index=1)
