@@ -163,6 +163,7 @@ In Docker's client-server architecture, the process goes as follows:
      ### Dockerfile for a React application
      
      ```dockerfile
+     
        # Use a Node.js image as the base
        FROM node:14-alpine
        
@@ -181,8 +182,29 @@ In Docker's client-server architecture, the process goes as follows:
        # Default command to run the application when a container starts
        CMD ["npm", "start"]
      ```
-  
 
+     - The Dockerfile for the React application uses a `Node.js image` as the base, copies the application files into the `container`, installs `dependencies`, builds the application, and sets the default `command` to start the application.
+
+
+  ### Dockerfile for a Spring Boot application
+  
+   ```dockerfile
+      # Use an OpenJDK image as the base
+      FROM openjdk:11-jre-slim
+      
+      # Set the working directory inside the container
+      WORKDIR /app
+      
+      # Copy the Spring Boot application JAR file into the container
+      COPY target/your-spring-boot-app.jar .
+      
+      # Default command to run the application when a container starts
+      CMD ["java", "-jar", "your-spring-boot-app.jar"]
+     ```
+   
+    - The Dockerfile for the Spring Boot application uses an `OpenJDK image` as the base, copies the Spring Boot application `JAR file` into the `container`, and sets the default `command` to run the application.
+ 
+      
  # 8. References 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
 - [Docs.Docker](https://docs.docker.com/)
