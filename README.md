@@ -418,11 +418,11 @@ To pull an image from a registry, you can use the docker pull command:
 - The `docker ps -a` command lists all containers, including those that have exited. Each row represents a container and includes information such as the container ID, image used to create the container, command executed in the container, creation time, status, exposed ports, and container name.
   
   ```bash
-     $ docker ps -a
-     CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS                      PORTS     NAMES
-     35b9a383ff6f   my-node-app       "node server.js"        2 minutes ago   Exited (0) 1 minute ago               my-node-container
-     c3abf8d84f2c   nginx:latest      "/docker-entrypoint...."   3 hours ago     Up 3 hours               80/tcp    my-nginx-container
-     e7b6f198d82a   ubuntu:latest     "/bin/bash"              3 hours ago     Exited (0) 3 hours ago               my-ubuntu-container
+  $ docker ps -a
+  CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS                      PORTS     NAMES
+  35b9a383ff6f   my-node-app       "node server.js"        2 minutes ago   Exited (0) 1 minute ago               my-node-container
+  c3abf8d84f2c   nginx:latest      "/docker-entrypoint...."   3 hours ago     Up 3 hours               80/tcp    my-nginx-container
+  e7b6f198d82a   ubuntu:latest     "/bin/bash"              3 hours ago     Exited (0) 3 hours ago               my-ubuntu-container
   ```
 
   
