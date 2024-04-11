@@ -537,7 +537,7 @@ To pull an image from a registry, you can use the docker pull command:
      CMD ["java", "-jar", "backend.jar"]
   ```
 
-  - ## docker-compose.yml
+- ## docker-compose.yml
 
 
   ```yml
