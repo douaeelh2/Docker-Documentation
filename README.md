@@ -241,7 +241,7 @@ In Docker's client-server architecture, the process goes as follows:
    
     - The Dockerfile for the Spring Boot application uses an `OpenJDK image` as the base, copies the Spring Boot application `JAR file` into the `container`, and sets the default `command` to run the application.
 
-      # dockerignore
+# dockerignore
       
 A `.dockerignore` file is used in Docker to specify files and directories that should be ignored when building a Docker image. Much like how a `.gitignore` file tells Git which files and directories to ignore when pushing code to a repository, a `.dockerignore` file specifies what Docker should ignore when building an image.
 
